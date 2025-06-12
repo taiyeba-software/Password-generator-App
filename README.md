@@ -20,8 +20,8 @@ Ensure you have **Node.js** and **npm** installed.
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/asynchronousJavascriptor/thirtysixstudio.git
-   cd thirtysixstudio
+   git clone https://github.com/taiyeba-software/Password-generator-App
+   cd password_generator
    npm install
    npm run dev
    server starts on localhost:5173
