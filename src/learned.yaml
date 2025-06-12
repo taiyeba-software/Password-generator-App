@@ -1,0 +1,41 @@
+####useCallback:
+ ^^syntax: useCallback(callback, dependencies)
+
+💙💙what are the meaning of dependencies of useCallback in react?💙💙
+
+    - **length**: If the password length changes, the function should use the new length.
+    - **numberAllowed**: If the user toggles numbers on/off, the function should use the new setting.
+    - **charAllowed**: If the user toggles special characters on/off, the function should use the new setting.
+    - **setpassword**: This is the state setter from `useState`. It’s stable and doesn’t change, but including it is safe and sometimes recommended by linters.
+
+    **Tip:**  
+    If you leave out a dependency, your function might use outdated values, causing bugs. Always include every variable from the outer scope that you use inside the callback.
+
+####useEffect:
+  ^^syntax: useEffect(effect, dependencies)
+
+
+💜💜what are the meaning of dependencies of useEffects ?💜💜
+
+      - `length`: Runs the effect if the password length changes.
+      - `numberAllowed`: Runs the effect if the "Numbers" checkbox is toggled.
+      - `charAllowed`: Runs the effect if the "Special Characters" checkbox is toggled.
+      - `generatePassword`: Runs the effect if the `generatePassword` function reference changes (which can happen if its dependencies change).
+
+
+
+      **Summary:**  
+      The effect keeps your password up-to-date with the latest user preferences. If you leave out a dependency, the effect might not run when you expect, leading to outdated passwords.
+
+
+💚💚what is the meaning of htmlFor in label tag in react?💚💚
+      - The value of `htmlFor` should match the `id` of the input you want to label.
+      - When you click the label, the associated input is focused or toggled (for checkboxes/radios).
+
+
+
+💛💛don't use defaultChecked in react, use checked instead 💛💛
+
+    -**using `e.target.defaultChecked`, which always returns the initial value, not the current checked state.**
+
+
